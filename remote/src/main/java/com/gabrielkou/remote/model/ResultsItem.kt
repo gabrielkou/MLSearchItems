@@ -1,5 +1,7 @@
 package com.gabrielkou.ml.data.model
 
+import com.gabrielkou.remote.model.AttributesItem
+
 data class ResultsItem(val seller: Seller,
                        val originalPrice: Any? = null,
                        val stopTime: String = "",
