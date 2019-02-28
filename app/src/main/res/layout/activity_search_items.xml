@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
+<RelativeLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:tools="http://schemas.android.com/tools"
         xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -7,4 +7,60 @@
         android:layout_height="match_parent"
         tools:context=".SearchItemsActivity">
 
-</android.support.constraint.ConstraintLayout>
+
+    <EditText
+            android:id="@+id/search_edit"
+            android:layout_margin="16dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+    <Button android:id="@+id/search_button"
+            android:layout_margin="16dp"
+            android:text="Search"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"/>
+
+    <ProgressBar
+            android:id="@+id/progress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center" />
+
+    <RelativeLayout
+            android:id="@+id/results_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/search_edit">
+
+        <android.support.v7.widget.AppCompatTextView
+                android:id="@+id/search_results_number"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginBottom="8dp"
+                tools:text="100 results"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+        <android.support.v7.widget.RecyclerView
+                android:id="@+id/recycler_search_results"
+                android:layout_marginTop="8dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginBottom="16dp"
+                android:layout_below="@id/search_results_number"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+        </android.support.v7.widget.RecyclerView>
+    </RelativeLayout>
+
+    <com.gabrielkou.ml.ui.widget.EmptyView android:id="@+id/view_empty"
+                                           android:layout_width="match_parent"
+                                           android:layout_height="match_parent"
+                                           android:visibility="gone" />
+
+    <com.gabrielkou.ml.ui.widget.ErrorView android:id="@+id/view_error"
+                                           android:layout_width="match_parent"
+                                           android:layout_height="match_parent"
+                                           android:visibility="gone" />
+</RelativeLayout>
