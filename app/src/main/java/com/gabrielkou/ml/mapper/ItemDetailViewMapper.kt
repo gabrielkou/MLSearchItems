@@ -6,6 +6,6 @@ import javax.inject.Inject
 
 open class ItemDetailViewMapper @Inject constructor():ViewMapper<ItemDetailsView, ItemDetailViewModel> {
     override fun mapToView(presentation: ItemDetailsView): ItemDetailViewModel {
-        return ItemDetailViewModel(presentation.title, "$"+presentation.price, presentation.seller)
+        return ItemDetailViewModel(presentation.title, "$"+presentation.price, "Condition: " + presentation.conition, presentation.thumbnail)
     }
 }

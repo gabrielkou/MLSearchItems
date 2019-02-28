@@ -1,5 +1,6 @@
 package com.gabrielkou.ml.search
 
+import android.app.SearchManager
 import android.arch.lifecycle.Observer
 import android.arch.lifecycle.ViewModelProviders
 import android.content.Intent
@@ -19,7 +20,9 @@ import dagger.android.AndroidInjection
 import kotlinx.android.synthetic.main.activity_search_items.*
 import javax.inject.Inject
 import android.content.Context
+import android.view.Menu
 import android.view.inputmethod.InputMethodManager
+import android.widget.SearchView
 import com.gabrielkou.ml.R
 
 
@@ -51,6 +54,7 @@ class SearchItemsActivity : AppCompatActivity() {
             }
         })
     }
+
 
     private fun setupSearchRecycler() {
         searchAdapter.itemListener = itemListener

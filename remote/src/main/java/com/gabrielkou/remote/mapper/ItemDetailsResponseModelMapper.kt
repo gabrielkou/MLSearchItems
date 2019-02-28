@@ -6,6 +6,6 @@ import javax.inject.Inject
 
 open class ItemDetailsResponseModelMapper @Inject constructor(): EntityMapper<ItemsResponse, ItemDetailEntity>{
     override fun mapFromRemote(model: ItemsResponse): ItemDetailEntity {
-        return ItemDetailEntity(model.title, model.price.toString(), model.condition)
+        return ItemDetailEntity(model.title, model.price.toString(), model.condition, model.thumbnail)
     }
 }

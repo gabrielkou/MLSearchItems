@@ -6,10 +6,10 @@ import javax.inject.Inject
 
 open class ItemDetailMapper @Inject constructor(): EntityMapper<ItemDetailEntity, ItemDetail> {
     override fun mapFromEntity(entity: ItemDetailEntity): ItemDetail {
-        return ItemDetail(entity.title, entity.price, entity.seller)
+        return ItemDetail(entity.title, entity.price, entity.condition, entity.thumbnail)
     }
 
     override fun mapToEntity(domain: ItemDetail): ItemDetailEntity {
-        return ItemDetailEntity(domain.title, domain.price, domain.seller)
+        return ItemDetailEntity(domain.title, domain.price, domain.condition, domain.thumbnail)
     }
 }

@@ -7,6 +7,8 @@ import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import com.bumptech.glide.Glide
+import com.bumptech.glide.request.RequestOptions
 import com.gabrielkou.ml.R
 import com.gabrielkou.ml.injection.ViewModelFactory
 import com.gabrielkou.ml.mapper.ItemDetailViewMapper
@@ -99,9 +101,13 @@ class ItemDetailsActivity : AppCompatActivity() {
         if (data.price!= null)
             detail_price.text = data.price
 
-        if (data.seller != null)
-            detail_seller.text = data.seller
+        if (data.condition != null)
+            detail_condition.text = data.condition
 
+        Glide.with(this)
+            .load(data.thumbnail)
+            .apply(RequestOptions.centerCropTransform())
+            .into(detail_thumbnail)
     }
 
 }

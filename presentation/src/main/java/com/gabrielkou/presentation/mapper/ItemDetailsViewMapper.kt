@@ -6,6 +6,6 @@ import javax.inject.Inject
 
 open class ItemDetailsViewMapper @Inject constructor():Mapper<ItemDetailsView, ItemDetail> {
     override fun mapToView(type: ItemDetail): ItemDetailsView {
-        return ItemDetailsView(type.title, type.price, type.seller)
+        return ItemDetailsView(type.title, type.price, type.condition, type.thumbnail)
     }
 }
