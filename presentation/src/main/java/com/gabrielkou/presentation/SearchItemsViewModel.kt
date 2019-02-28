@@ -10,7 +10,6 @@ import com.gabrielkou.ml.presentation.data.ResourceState
 import com.gabrielkou.presentation.mapper.ItemViewMapper
 import com.gabrielkou.presentation.model.ItemView
 import io.reactivex.observers.DisposableObserver
-import io.reactivex.subscribers.DisposableSubscriber
 import javax.inject.Inject
 
 open class SearchItemsViewModel @Inject constructor(

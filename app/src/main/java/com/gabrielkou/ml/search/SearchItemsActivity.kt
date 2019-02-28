@@ -7,6 +7,7 @@ import android.os.Bundle
 import android.support.v7.widget.LinearLayoutManager
 import android.view.View
 import com.gabrielkou.ml.R
+import com.gabrielkou.ml.injection.ViewModelFactory
 import com.gabrielkou.ml.mapper.ItemViewMapper
 import com.gabrielkou.ml.model.ItemViewModel
 import com.gabrielkou.ml.presentation.data.Resource
@@ -24,6 +25,7 @@ class SearchItemsActivity : AppCompatActivity() {
     @Inject
     lateinit var searchItemsViewModel: SearchItemsViewModel
     @Inject lateinit var mapper: ItemViewMapper
+    @Inject lateinit var viewModelFactory: ViewModelFactory
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -31,7 +33,7 @@ class SearchItemsActivity : AppCompatActivity() {
 
         AndroidInjection.inject(this)
 
-        searchItemsViewModel = ViewModelProviders.of(this)[SearchItemsViewModel::class.java]
+        searchItemsViewModel = ViewModelProviders.of(this, viewModelFactory).get(SearchItemsViewModel::class.java)
 
         setupSearchRecycler()
         setupSearchListener()
