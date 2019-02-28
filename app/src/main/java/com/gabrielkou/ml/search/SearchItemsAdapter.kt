@@ -16,6 +16,7 @@ import javax.inject.Inject
 class SearchItemsAdapter @Inject constructor(): RecyclerView.Adapter<SearchItemsAdapter.ViewHolder>() {
 
     var items : List<ItemViewModel> = arrayListOf()
+    var itemListener: ItemListener? = null
 
     override fun onCreateViewHolder(parent: ViewGroup, position: Int): ViewHolder {
         val itemView = LayoutInflater
@@ -36,6 +37,10 @@ class SearchItemsAdapter @Inject constructor(): RecyclerView.Adapter<SearchItems
             .load(item.imageUrl)
             .apply(RequestOptions.circleCropTransform())
             .into(holder.thumbnail)
+
+        holder.itemView.setOnClickListener {
+            itemListener?.onItemClicked(item.id)
+        }
     }
 
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {

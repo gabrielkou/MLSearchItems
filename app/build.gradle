@@ -56,7 +56,7 @@ dependencies {
 
     compile presentationDependencies.archRuntime
     compile presentationDependencies.archExtensions
-    compile "android.arch.persistence.room:rxjava2:1.0.0"
+    implementation "android.arch.persistence.room:rxjava2:1.0.0"
     kapt presentationDependencies.archCompiler
 
     testImplementation mobileUiTestDependencies.kotlinJUnit
