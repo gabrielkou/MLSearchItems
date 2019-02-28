@@ -5,7 +5,7 @@
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".SearchItemsActivity">
+        tools:context=".search.SearchItemsActivity">
 
 
     <EditText
@@ -54,13 +54,4 @@
         </android.support.v7.widget.RecyclerView>
     </RelativeLayout>
 
-    <com.gabrielkou.ml.ui.widget.EmptyView android:id="@+id/view_empty"
-                                           android:layout_width="match_parent"
-                                           android:layout_height="match_parent"
-                                           android:visibility="gone" />
-
-    <com.gabrielkou.ml.ui.widget.ErrorView android:id="@+id/view_error"
-                                           android:layout_width="match_parent"
-                                           android:layout_height="match_parent"
-                                           android:visibility="gone" />
 </RelativeLayout>
