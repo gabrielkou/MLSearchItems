@@ -11,11 +11,11 @@ import retrofit2.converter.gson.GsonConverterFactory
 import java.util.concurrent.TimeUnit
 
 /**
- * Provide "make" methods to create instances of [SearchService]
+ * Provide "make" methods to create instances of [ItemsService]
  * and its related dependencies, such as OkHttpClient, Gson, etc.
  */
 object SearchServiceFactory {
-    fun makeSearchService(isDebug: Boolean): SearchService {
+    fun makeSearchService(isDebug: Boolean): ItemsService {
         val okHttpClient = makeOkHttpClient(
             makeLoggingInterceptor(isDebug)
         )
@@ -25,14 +25,14 @@ object SearchServiceFactory {
         )
     }
 
-    private fun makeSearchService(okHttpClient: OkHttpClient, gson: Gson): SearchService {
+    private fun makeSearchService(okHttpClient: OkHttpClient, gson: Gson): ItemsService {
         val retrofit = Retrofit.Builder()
             .baseUrl("https://api.mercadolibre.com/")
             .client(okHttpClient)
             .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
             .addConverterFactory(GsonConverterFactory.create(gson))
             .build()
-        return retrofit.create(SearchService::class.java)
+        return retrofit.create(ItemsService::class.java)
     }
 
     private fun makeOkHttpClient(httpLoggingInterceptor: HttpLoggingInterceptor): OkHttpClient {

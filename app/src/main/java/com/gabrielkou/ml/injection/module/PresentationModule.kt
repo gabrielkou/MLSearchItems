@@ -3,7 +3,8 @@ package com.gabrielkou.ml.injection.module
 import android.arch.lifecycle.ViewModel
 import android.arch.lifecycle.ViewModelProvider
 import com.gabrielkou.ml.injection.ViewModelFactory
-import com.gabrielkou.presentation.SearchItemsViewModel
+import com.gabrielkou.presentation.details.ItemDetailsViewModel
+import com.gabrielkou.presentation.search.SearchItemsViewModel
 import dagger.Binds
 import dagger.MapKey
 import dagger.Module
@@ -18,11 +19,11 @@ abstract class PresentationModule {
     @ViewModelKey(SearchItemsViewModel::class)
     abstract fun bindSearchItemsViewModel(viewModel: SearchItemsViewModel): ViewModel
 
-//    @Binds
-//    @IntoMap
-//    @ViewModelKey(BrowseBookmarkedProjectsViewModel::class)
-//    abstract fun bindBrowseBookmarkedProjectsViewModel(
-//        viewModel: BrowseBookmarkedProjectsViewModel): ViewModel
+    @Binds
+    @IntoMap
+    @ViewModelKey(ItemDetailsViewModel::class)
+    abstract fun bindItemDetailsViewModel(
+        viewModel: ItemDetailsViewModel): ViewModel
 
 
     @Binds

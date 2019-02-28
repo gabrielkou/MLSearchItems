@@ -1,5 +1,6 @@
 package com.gabrielkou.data.store
 
+import com.gabrielkou.data.model.ItemDetailEntity
 import com.gabrielkou.data.model.ItemEntity
 import com.gabrielkou.data.repository.ItemsDataStore
 import com.gabrielkou.data.repository.ItemsRemote
@@ -19,5 +20,9 @@ open class ItemsRemoteDataStore @Inject constructor(
 
     override fun searchItems(query: String): Observable<List<ItemEntity>> {
         return itemsRemote.searchItems(query)
+    }
+
+    override fun getItemDetails(itemId:String): Observable<ItemDetailEntity>{
+        return itemsRemote.getItemDetails(itemId)
     }
 }

@@ -13,7 +13,7 @@ import com.gabrielkou.ml.mapper.ItemViewMapper
 import com.gabrielkou.ml.model.ItemViewModel
 import com.gabrielkou.ml.presentation.data.Resource
 import com.gabrielkou.ml.presentation.data.ResourceState
-import com.gabrielkou.presentation.SearchItemsViewModel
+import com.gabrielkou.presentation.search.SearchItemsViewModel
 import com.gabrielkou.presentation.model.ItemView
 import dagger.android.AndroidInjection
 import kotlinx.android.synthetic.main.activity_search_items.*
@@ -123,8 +123,7 @@ class SearchItemsActivity : AppCompatActivity() {
 
     private val itemListener = object :ItemListener{
         override fun onItemClicked(itemId: String) {
-            var intent = Intent(this@SearchItemsActivity, ItemDetailsActivity::class.java)
-            startActivity(intent)
+            ItemDetailsActivity.startActivity(this@SearchItemsActivity, itemId)
         }
     }
 

@@ -1,4 +1,4 @@
-package com.gabrielkou.presentation
+package com.gabrielkou.presentation.search
 
 import android.arch.lifecycle.LiveData
 import android.arch.lifecycle.MutableLiveData
