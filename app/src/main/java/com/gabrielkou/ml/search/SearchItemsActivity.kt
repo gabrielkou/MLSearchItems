@@ -2,6 +2,7 @@ package com.gabrielkou.ml.search
 
 import android.arch.lifecycle.Observer
 import android.arch.lifecycle.ViewModelProviders
+import android.content.Context
 import android.os.Bundle
 import android.support.v4.view.MenuItemCompat
 import android.support.v7.app.AppCompatActivity
@@ -9,6 +10,7 @@ import android.support.v7.widget.LinearLayoutManager
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
+import android.view.inputmethod.InputMethodManager
 import com.gabrielkou.ml.details.ItemDetailsActivity
 import com.gabrielkou.ml.injection.ViewModelFactory
 import com.gabrielkou.ml.mapper.ItemViewMapper
@@ -58,6 +60,7 @@ class SearchItemsActivity : AppCompatActivity() {
 
             override fun onQueryTextSubmit(query: String): Boolean {
                 searchItemsViewModel.searchItems(query)
+                dismissKeyboard()
                 return true
             }
 
@@ -117,6 +120,10 @@ class SearchItemsActivity : AppCompatActivity() {
         }
     }
 
+    private fun dismissKeyboard() {
+        val imm = getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+        imm!!.hideSoftInputFromWindow(recycler_search_results.windowToken, 0)
+    }
 
     private fun setupScreenForError(message: String?) {
         progress.visibility = View.GONE
