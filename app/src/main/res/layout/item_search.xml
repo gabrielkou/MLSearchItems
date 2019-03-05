@@ -22,4 +22,10 @@
             android:layout_toRightOf="@+id/item_thumbnail"
             android:textSize="@dimen/text_title"/>
 
+    <View
+            android:layout_width="fill_parent"
+            android:layout_marginTop="2dp"
+            android:layout_height="1dp"
+            android:background="@color/colorDivider"/>
+
 </RelativeLayout>
