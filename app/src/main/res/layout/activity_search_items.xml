@@ -30,7 +30,7 @@
     <TextView
             android:id="@+id/view_empty"
             android:visibility="gone"
-            android:text="No results found for that query..."
+            android:text="@string/no_results_found_for_that_query"
             android:textColor="@color/colorDivider"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
@@ -40,7 +40,7 @@
             android:visibility="gone"
             android:layout_centerInParent="true"
             android:textColor="@color/colorAccent"
-            android:text="Error fetching data from server. Try again..."
+            android:text="@string/error_fetching_data_from_server_try_again"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
 
