@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content" xmlns:tools="http://schemas.android.com/tools">
 
     <ImageView
             android:id="@+id/item_thumbnail"
@@ -10,22 +10,22 @@
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
             android:layout_centerVertical="true"
-            android:padding="12dp" />
+            android:layout_margin="16dp" />
     <TextView
             android:id="@+id/item_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="12dp"
-            android:layout_marginStart="12dp"
+            android:layout_marginStart="16dp"
             android:layout_marginTop="16dp"
             android:layout_toEndOf="@+id/item_thumbnail"
             android:layout_toRightOf="@+id/item_thumbnail"
-            android:textSize="@dimen/text_title"/>
+            tools:text= "Test"
+            android:textSize="@dimen/text_normal"/>
 
     <View
             android:layout_width="fill_parent"
             android:layout_marginTop="2dp"
             android:layout_height="1dp"
-            android:background="@color/colorDivider"/>
+            android:background="@color/dark_gray"/>
 
 </RelativeLayout>

@@ -35,7 +35,6 @@ class SearchItemsAdapter @Inject constructor(): RecyclerView.Adapter<SearchItems
 
         Glide.with(holder.itemView.context)
             .load(item.imageUrl)
-            .apply(RequestOptions.circleCropTransform())
             .into(holder.thumbnail)
 
         holder.itemView.setOnClickListener {
