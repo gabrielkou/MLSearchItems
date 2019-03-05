@@ -27,4 +27,21 @@
                 android:layout_height="wrap_content">
         </android.support.v7.widget.RecyclerView>
 
+    <TextView
+            android:id="@+id/view_empty"
+            android:visibility="gone"
+            android:text="No results found for that query..."
+            android:textColor="@color/colorDivider"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+    <TextView
+            android:id="@+id/view_error"
+            android:visibility="gone"
+            android:layout_centerInParent="true"
+            android:textColor="@color/colorAccent"
+            android:text="Error fetching data from server. Try again..."
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
 </RelativeLayout>

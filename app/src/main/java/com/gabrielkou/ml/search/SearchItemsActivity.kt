@@ -105,18 +105,18 @@ class SearchItemsActivity : AppCompatActivity() {
     private fun setupScreenForLoadingState() {
         progress.visibility = View.VISIBLE
         recycler_search_results.visibility = View.GONE
-//        view_empty.visibility = View.GONE
-//        view_error.visibility = View.GONE
+        view_empty.visibility = View.GONE
+        view_error.visibility = View.GONE
     }
 
     private fun setupScreenForSuccess(data: List<ItemViewModel>?) {
-//        view_error.visibility = View.GONE
+        view_error.visibility = View.GONE
         progress.visibility = View.GONE
         if (data != null && data.isNotEmpty()) {
             updateListView(data)
             recycler_search_results.visibility = View.VISIBLE
         } else {
-//            view_empty.visibility = View.VISIBLE
+            view_empty.visibility = View.VISIBLE
         }
     }
 
@@ -128,8 +128,8 @@ class SearchItemsActivity : AppCompatActivity() {
     private fun setupScreenForError(message: String?) {
         progress.visibility = View.GONE
         recycler_search_results.visibility = View.GONE
-//        view_empty.visibility = View.GONE
-//        view_error.visibility = View.VISIBLE
+        view_empty.visibility = View.GONE
+        view_error.visibility = View.VISIBLE
     }
 
 
