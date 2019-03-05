@@ -8,15 +8,33 @@
         tools:context=".details.ItemDetailsActivity">
 
 
+    <ImageView
+            android:id="@+id/detail_thumbnail"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:padding="16dp" />
+
     <TextView
             android:id="@+id/detail_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="12dp"
-            android:layout_marginStart="12dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginStart="16dp"
             android:layout_marginTop="16dp"
-            android:textSize="@dimen/text_title"/>
+            android:layout_below="@id/detail_thumbnail"
+            android:textSize="@dimen/text_normal"/>
 
+    <TextView
+            android:id="@+id/detail_condition"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_below="@+id/detail_title"
+            android:textSize="@dimen/text_normal"/>
 
     <TextView
             android:id="@+id/detail_price"
@@ -24,31 +42,12 @@
             android:layout_height="wrap_content"
             android:textColor="@color/colorGreen"
             android:textStyle="bold"
-            android:layout_marginLeft="12dp"
-            android:layout_marginStart="12dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginStart="16dp"
             android:layout_marginTop="16dp"
-            android:layout_below="@+id/detail_title"
+            android:layout_below="@+id/detail_condition"
             android:textSize="@dimen/text_title"/>
 
-    <TextView
-            android:id="@+id/detail_condition"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="12dp"
-            android:layout_marginStart="12dp"
-            android:layout_marginTop="16dp"
-            android:layout_below="@+id/detail_price"
-            android:textSize="@dimen/text_title"/>
-
-    <ImageView
-            android:id="@+id/detail_thumbnail"
-            android:layout_width="200dp"
-            android:layout_height="200dp"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:layout_below="@id/detail_condition"
-            android:layout_centerVertical="true"
-            android:padding="12dp" />
 
     <ProgressBar
             android:id="@+id/detail_progress"
